@@ -1,0 +1,32 @@
+﻿@model BlockedUsers.ViewModel.SearchViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Usuários Bloqueados</h2>
+
+        <form action="/action_page.php">
+            <div class="form-group col-md-2">
+                <label for="City">Cidade:</label>
+                <select id="City" class="form-control">
+                    <option id="optSaoPaulo" value="0">São Paulo</option>
+                    <option id="optCampinas" value="1">Campinas</option>
+                </select>
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Search">Pesquisar:</label>
+                <input type="text" class="form-control" style="width:50%;" size="10" id="Search">
+                <button type="submit" class="btn btn-default">Pesquisar</button>
+            </div>
+
+        </form>
+
+        @foreach (var item in Model.Result)
+        {
+            <div>@item.Nome</div>
+        }
+    </div>
+
+</div>
